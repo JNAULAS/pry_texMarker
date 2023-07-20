@@ -1,13 +1,47 @@
-% defines the type of document
-\documentclass{article}
+\documentclass[a4paper, 11pt]{article}
+% Parquete para matematicas.
+\usepackage{amsmath, amsfonts, amssymb}
+%Permte crear referencias
+\usepackage{hyperref}
 
-% define the title 
 \title{Mi primer Documento \LaTeX}
-% defines the author
 \author{Juan Naula}
 
-%defines the body of the document
+
+
+%\begin{abstract}
+  % Pruebas \LaTeX
+%\end{abstract}
+
 \begin{document}
+%Instruccion para el titulo
 \maketitle
-Hola mundo
+%Seccion listas
+\section{Listas}\label{sec1}
+En la Ec.\ref{EC1} podemos observar la formula.
+En la seccion \ref{sec1} vamos a realizar lista utilizando el comando 
+\textbf{ITEMIZE}
+
+\begin{itemize}
+    \item Primer Elemento
+    %Agergamossub item
+    \begin{itemize}
+        \item Subitem 1
+        \item Subitem 2
+    \end{itemize}
+      \item Segundo Elemento
+        \item Tercero Tercer Elemento
+\end{itemize}
+% Agregamos nueva seccion
+\section{Enumeracion}
+\begin{enumerate}
+    \item Primer Elemento
+    \item Segundo Elemento
+    \item Tercer Elemento
+\end{enumerate}
+
+\begin{equation}
+\label{EC1}
+    a+b = c
+\end{equation}
 \end{document}

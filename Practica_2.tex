@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{enumitem}
+% Parquete para matematicas.
+\usepackage{amsmath, amsfonts}
+% Permte crear referencias
+\usepackage{hyperref}
+% Corrige idioma de las ñ
+\usepackage[T1]{fontenc}
+%\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+% Agregamos paquete que me permite citar
+\usepackage{cite}
+
+\title{\color{red} Estructura del documento en \LaTeX}
+\author{Juan Naula}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+    La clase utilizada en esta actividad es \verb|article| y el tamaño de la letra es de 11 puntos. Debe definirse un documento \verb|pdf| que sea idéntico a este documento.
+    Para la elaboración de listas, puede que necesites consultar la referencia proporcionada en al sección \textbf{entornos}.
+\end{abstract}
+% Agregamos la seccion , agregamos indetificador de la seccion \label{sec:1}
+\section{Introducción} \label{sec:1}
+En la sección \ref{sec:1} se realiza una practica de listas.
+% Agregamos subsecciones
+\subsection{Lista}
+\begin{itemize}
+    \item Primer Elemento
+    \begin{itemize}
+        \item Primer subelemento
+        \item Segundo subelemento
+    \end{itemize}
+    \item Segundo Elemento
+    \item Tercer Elemento
+    %Agregamos punto seguidos
+    \item \ldots
+
+    % Agregamos nueva seccion de listas enumeradas
+    \subsection{Listas enumeradas} \label{sub1}
+    \begin{enumerate}
+        \item Primer Item
+            \begin{enumerate}
+                \item Primer subelemento enumerado
+                \item Segundo subelemento enumerado
+                \item Tercero subelemento enumerado
+            \end{enumerate}
+        \item Segundo Item
+        \item Tercero  Item
+    \end{enumerate}
+\end{itemize}
+\subsection{Descripción del elemento} \label{sub2}
+\begin{description}
+    \item[Rojo] Color que caracteriza el peligro. 
+    \item[Azul] Color del cielo 
+\end{description}
+% Formulas matematicas
+\section{Matemáticas} \label{sec:2}
+% Agregamos mod matematico $$ Eline con esto entiende latex
+% Latex en modo matematico no respeta texto
+% si se requiere poner testo dentro de l aformual se utiliza \textahsjah
+En la sección \ref{sec:2} realizaremos ecuaciones matemáticas. La formula de la teroria de la realtividad es $E=mc?2$
+
+\subsection{Exponentes e Indices}
+% No debe existir espacion en el equation
+\begin{equation}
+    %Agregamso subindices _ Permite indicar que es un subindice
+    k_{n+1}=n?2+k_n?2-k_{n-1}
+\end{equation}\label{EC1}
+%Para referenciar la ecuacio
+En \ref{EC1} se observa el uso de exponentes e índices.
+
+
+%Subseccion raiz cuadrada par esto se usa la fraccion 
+\subsection{Raices Cuadradas} \label{EC2}
+\begin{equation}
+    \sqrt{\frac{a}{b}}
+\end{equation}
+
+%Ecuaciones mas complejas
+\begin{equation}
+    \sqrt{[n]{1+x+x?2+x?3+\dots}}
+\end{equation}
+
+% para no usar begin y usar modo matematico
+\[
+\frac{n!}{k!(n-k!)}
+\]
+% Para enumerara debemos usar si o si el section
+\[
+\frac{\frak{1}{x}+\frac{1}{y}}{y-z}
+\]
+% Tener cuidado al escribir las letras como corresponden
+\subsection{Letras Griegas}
+\begin{equation}
+    \alpha\mu_1+\beta \mu_2=v
+\end{equation}
+% Escribri ecuacion inline $n(n+1)/2$
+La suma de los $n$ primeros números enteros positivos es $\frac{n(n+1)}{2}$ es decir $1+2+\dots+n(n+1)$.
+Utilizando la anotación sumatoria, lo anterior se escribiria como $\sum_{i+1}?{n}=\frac{n(n+1)}{2}$; formula que volveremos a escribir en modo resaltado.
+
+\[
+\sum_{i=1}?{n}=\frac{n(n+1)}{2}
+\]
+
+% Subsection de matris, llena de puntos de la columna 2
+\subsection{Matriz}
+\[
+\begin{matrix}
+    a_{11}&a_{12}&a_{13}&\dots&a_{1n}\\
+    a_{21}&a_{22}&a_{23}&\dots&a_{1n}\\
+    \hdotsfor[2]{5}\\
+    a_{n1}&a_{n2}&a_{n3}&\dots&a_{nn}\
+\end{matrix}
+\]
+% Formas de escribir las ecuaciones
+\begin{equation}
+    \begin{matrix}
+        a&b\\
+        c&d
+    \end{matrix}
+\end{equation}
+
+\begin{equation}
+    \begin{pmatrix}
+        a&b\\
+        c&d
+    \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{bmatrix}
+        a&b\\
+        c&d
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{Bmatrix}
+        a&b\\
+        c&d
+    \end{Bmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{vmatrix}
+        a&b\\
+        c&d
+    \end{vmatrix}
+\end{equation}
+
+\begin{equation}
+    \begin{Vmatrix}
+        a&b\\
+        c&d
+    \end{Vmatrix}
+\end{equation}
+% Ecuaciones mas complejas
+\begin{equation}
+    \begin{pmatrix}
+        1&0\cdots&0\\
+        0&1\cdots&0\\
+        \vdots & \vdots & \ddots&\vdots\\
+        0&0&\cdots&1
+    \end{pmatrix}
+\end{equation}
+% Creacion de casos en los libros
+\subsection{Casos}
+\[
+\operatorname{sing}x=
+\begin{cases}
+    1,&x>0\\
+    0,&x=0\\
+    -1,&x<0
+\end{cases}
+\]
+% Agregamso nueva subseccion con ecuaciones 
+\subsection{Ecuaciones de varias lineas}
+% Realizaremos array de ecuaciones
+\begin{eqnarray}
+    (a+b)^2-(a-b)^2 &=& \\
+    (a+b) (a+b)-(a-b)(a-b) &=& \\
+    (a^2+2ab+b^2)-(a^2-2ab+b^2) &=& 4ab
+%Para que no salga enumerada se agreag el * en el cierre de la      % ecuacion
+\end{eqnarray}
+%Anpesan da saldo de columna 
+\begin{align}
+    (a+b)^2-(a-b)^2&=(a+b)(a+b)-(a-b)(a-b)\\
+                   &=(a^2+2ab+b^2)-(a^2-2ab+b^2)\\
+                   &=4ab
+\end{align}
+
+%Nueva Seccion, latex ordena ups
+\section{Figuras}
+% Aqui nosotros podemos decirle donde quiero que se ubique al figura %[h], forza la figura a estar donde estaba [h!]
+%Aqui debemos dar al ruta de la figura\textbf{}
+%Permite dar un nombre
+\begin{figure}[h]   
+    \centering
+    \includegraphics[width=40mm,height=40mm]{logo.png}
+    \caption{Logo UPS}
+    \label{F1}
+\end{figure}
+
+En la Fig. \ref{F1} se muestra el Logo de la Universidad
+%Agregar imagen con acnho de columnas
+%Aqui administra el espacio evitando que se deforme y con esto se %evita estar cuadrando la imagen
+%Aqui debemos dar al ruta de la figura
+%\includegraphics[scale=1.2, angle=45]{logo.png}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth, angle=180]{logo.png}
+    \caption{Logo UPS 2}
+    \label{F1}
+\end{figure}
+
+%Seccion tablas https://www.tablesgenerator.com/
+\section{Tablas}
+
+%Permite centrar la informcion de las celdas, para lineas verticales 
+%Permite Gregar lineas c|c|c
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+Nombre      & Apellido & Nota \\ \hline \hline
+Juan        & Naula    & 38   \\
+Karolain    & Naula    & 38   \\
+Ian         & Naula    & 38   \\
+Jenny       & Quizhpe  & 31   \\ \hline \hline
+\end{tabular}
+\caption{Notas}
+\label{T1}
+\end{table}
+
+En la tabla \ref{T1} se muestran las notas de los estudiantes 
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+\multicolumn{3}{c}{Cuadro de notas} \\ \hline
+Nombre     & Apellido     & Nota    \\ 
+Juan       & Naula        & 38      \\
+Jenny      & Quizhpe      & 31      \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Como citar} \label{sec:cita}
+En la seccion \ref{sec:cita}, se indica como citar en un documento \cite{uno}.
+
+Los autores en \cite{uno} indican que ....
+
+En \cite{uno}, se define ....
+
+La Ingeniería de sofware es .....,  tal como se indica en \cite{dos}.
+
+En los diferentes estudios \cite{uno,dos}
+
+
+
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{ieeetr}
+\bibliography{bib.bib}
+
+\end{document}
