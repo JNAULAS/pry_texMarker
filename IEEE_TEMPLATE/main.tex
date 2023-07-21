@@ -1,0 +1,185 @@
+\documentclass[journal]{IEEEtran} % use the `journal` option for ITherm conference style
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+%\usepackage{algorithm}
+\usepackage[ruled, vlined]{algorithm2e}
+
+% Agregar Seudocodigo
+\usepackage{listings}
+% Paquetes para tigz y agregar el archivo fig.tex
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{caption}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%Agrega nuevo comando para geragr figuras
+\newcommand{\misDatos}{(0,0)(1,0)(2,2)(3,0)(4,6)(5,4),(6,7)}
+    
+\begin{document}
+
+\title{Industrial Communication based on MQTT and
+Modbus Communication applied in a
+Meteorological Network\\
+% delete or comment-out the following line before submission
+{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and should not be used}
+\thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{%%%% author names
+    \IEEEauthorblockN{1\textsuperscript{st} Juan Naula}% first author
+    \IEEEauthorblockA{\textit{GIHP4C, Universidad Politecnica Saleciana, Cuenca, Ecuador}}\\% first affiliation
+    %%%% corresponding author contact details
+    \IEEEauthorblockA{jnaulas@ups.edu.ec}
+}
+
+\maketitle
+
+\begin{abstract}
+    In this paper, we propose an architecture to enable
+hierarchical sensors networks that use MQTT protocol for sensors
+data acquisition interact with the MODBUS protocol to send
+information to the SCADA system. The proposed architecture
+implemented with three stages. In the first stage, we configure
+the MQTT protocol in sensors. In the second stage, we configure
+the middleware to transport the data to SCADA system by
+MODBUS protocol. And in the third stage, the SCADA system
+is implemented. We conclude that the architecture proposed is
+feasible to hierarchical sensor networks that used the MQTT
+protocol and interacts with MODBUS industrial networks.
+\end{abstract}
+
+\begin{IEEEkeywords}
+    MQTT, modbus, industrial communication,
+SCADA.
+\end{IEEEkeywords}
+
+\section{Introduction}
+The Internet of Things (IoT) will change the way we
+live, its technological impact will give intelligence to almost
+everything things and will allow the development of cloud
+computing since more data can be collected, stored and
+analyzed than ever before, as described by authors in \cite{guohuan2009research}.
+
+In this regard, as described in \cite{@inproceedingsdai2004unifying,8789574} the IoT is growing
+and is expected that by 2020 there will be more than two
+billion devices connected to Internet. In the same way, in
+\cite{akyildiz2002wireless}, \cite{alani2014osi,banks2014mqtt,bworldm}, the authors emphasize that interconnected things
+uses existing Internet standards to provide information transfer
+services, analysis, applications and communications, i.e., not
+only collects information from the environment (detection)
+to interact with the physical world (action/command/control)
+independently.
+\section{General System Architecture}
+In Fig. \ref{Fig1:1} we showed the General System Architecture above
+described.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Figuras/fig1.pdf}
+    \caption{general System Architecture}
+    \label{Fig1:1}
+\end{figure}
+
+\subsection{Algorithm}
+\begin{algorithm}
+%Alinea el algoritmo
+    \SetAlgoLined
+    \KwResult {Write here the result}
+    initialization\;
+    \While{while condition}{
+        instructions\;
+        \eIf{condition}{
+        instructions 1\;
+        instructions  1\;
+        }{
+        instruction3\;
+        }
+    }
+    \caption{How to write algorithm}
+\end{algorithm}
+
+\section{Pseudocode}
+%Crear seudo codigo en python
+\begin{itemize}
+    \item Python
+
+    \begin{lstlisting}[language=Python]
+        ## Programa que escriba numetos
+        ## impares desde 100 hasta la unidad
+        ## y calcule la suma
+        n=100
+        def mi_funcion(n, acum):
+        acum:0
+        while n>=1:
+        if n%2 !=0:
+        print n
+        acum +=n
+        n-=1
+        print 'y su suma es: '+str(acum)
+        mu_funcion(n)
+    \end{lstlisting}
+    \item C
+    \begin{lstlisting}[language=c, breaklines=true]
+        #include <stdio.h>
+        #define N10
+        /*
+        Comenrario en un bloque
+        */
+        int main()
+        {
+        int i;
+
+        //line coment
+        puts(hola mundo);
+            for(i=0; i<N;i+++)
+            {
+                puts("\LaTeX es genial para los programadores");
+            }
+            return 0;
+        }
+    \end{lstlisting}
+\end{itemize}
+% Agrega al punto en el que lo generamos [h!]
+
+\section{TIKZ}
+\begin{figure}[h!]
+    \centering
+    % Para dar tamaño a la figura
+    \resizebox{.85\linewidth}{!}{\input{Figuras/fig}}
+    \caption{Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.6] 
+        \draw[very thin, gray] (0,0) grid(11,8);
+        \foreach \y in{1,2,...,7} \draw(-1,\y)node[left]{\y};
+        \foreach \x in{0,1,...,10} \draw(\x,0)node[below]{\x};
+        \def\misDatos{(0,1) (1,2) (2,3) (3,2) (4,1) (5,3)}
+        \draw[line width=5mm,color=blue!50] plot[ycomb] coordinates{\misDatos};
+    \end{tikzpicture}
+    \captionof{figure}{\text{Confusion matrix}}
+    \label{BARRA}
+\end{center}
+
+\section*{Acknowledgment}
+
+
+
+\section*{References}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bibl.bib}
+
+
+\end{document}
