@@ -1,0 +1,280 @@
+\documentclass[11pt, 
+				t, 
+				beamer,
+				%trans,
+				%handout,
+				breaklinks = true,
+				bookmarksnumbered,
+				spanish,
+				]{beamer}
+
+
+%% Opciones:
+%%    - beamer:  Para crear la presentación. Crea solapas y transiciones.
+%%    - trans:   No crea solapas (overlays). Versión para imprimir en transparencia
+%%               por si falla el cañón de proyección, o el ordenador.
+%%    - handout: Versión para imprimir y repartir entre los oyentes.
+%%    - draft:   compilación más rápida mientras se trabaja (no incluye imágenes).
+%%
+%%    - t: Alineación del contenido de las transparencias: b(ottom), c(enter), t(op).  
+%%
+%%    - 11pt: Es el tamaño de letra que utiliza Beamer.
+%%            Lo puedes cambiar a: 8pt, 9pt, 10pt (smaller), 12pt (bigger) y más...
+
+
+%----------------------------------------------------------------------------
+%% Paquetes generales necesarios
+
+%\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{mathtools}  % Comandos ampliados en el entorno matemático
+\usepackage{graphicx}
+
+\usepackage[
+	url = false,
+	style = authoryear,
+	bibstyle = authoryear,
+	hyperref = true,
+%	backref = true,
+	backend = bibtex,
+	]{biblatex}
+
+\bibliography{referencias}
+
+
+%----------------------------------------------------------------------------
+%% Información de la portada y de los marcos exteriores
+
+
+\title [Presentacion de la asignatura. Normativa
+	(\insertframenumber/\inserttotalframenumber)
+	]
+	{\Large\bf Automatización de máquinas y procesos\\ Curso 2014-2015}
+
+\author[José V. Salcedo]{}
+
+\date{}
+
+\institute[Departamento de Ingeniería de Sistemas y Automática]{}
+
+%----------------------------------------------------------------------------
+%% Configuración de la versión para imprimir:
+%%    - handout: para imprimir en papel y repartir entre los oyentes
+%%    - trans: para imprimir transparencias
+
+\usepackage{pgfpages}
+
+\mode<handout>{
+	\usepackage[a4, dvips, landscape, off]{crop}
+	\pgfpagesuselayout{4 on 1}[a4paper, border shrink=5mm, landscape]
+	\usetheme{Montpellier}
+	\usecolortheme{dove}
+	}
+
+\mode<trans>{
+	\usepackage[a4, dvips, landscape, off]{crop}
+	\pgfpagesuselayout{resize to}[a4paper, border shrink=5mm, landscape]
+	}
+
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+% Para conseguir el efecto de semitransparencia para las pausas en los ítems
+\setbeamercovered{dynamic}
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+%% Puedes cambiar el aspecto eligiendo un tema o plantilla de presentación
+%% que incluye la configuración de todos los elementos de la presentación:
+%%     - Interiores: el contenido de las transparencias
+%%     - Exteriores: los marcos informativos y barras de navegación
+%%     - Colores: la paleta de colores de las transparencias
+%%     - Tipos de letra
+
+%----------------------------------------------------------------------------
+%% Elección de un tema completo
+
+%\mode<beamer>{\usetheme{Warsaw}} % Usa este tema en el modo presentación
+\mode<beamer>{\usetheme[compress]{Berlin}} % Usa este tema en el modo presentación
+\mode<trans>{\usetheme[compress]{Szeged}}  % Usa este tema en el modo transparencias
+
+% ------------------------------
+%% Temas sin barra de navegación.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usetheme{default} 
+%\usetheme{Bergen} 
+%\usetheme{Boadilla} 
+%\usetheme{Madrid} 
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+
+% ------------------------------
+%% Temas con barra de navegación tipo árbol.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Montpellier}
+
+% ------------------------------
+%% Temas con barra de navegación lateral.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usetheme[]{Berkeley}
+%\usetheme[]{PaloAlto}
+%\usetheme[]{Goettingen}
+%\usetheme[]{Marburg}
+%\usetheme[]{Hannover}
+
+% ------------------------------
+%% Temas con un pequeño marco de navegación.
+%% Marca el transcurso de la presentación con circulitos.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usetheme[compress]{Berlin}
+%\usetheme[compress]{Ilmenau} % Variación de Berlin
+%\usetheme[compress]{Dresden}
+%\usetheme[compress]{Darmstadt}
+%\usetheme[compress]{Frankfurt}
+%\usetheme[compress]{Singapore}
+%\usetheme[compress]{Szeged}
+
+% ------------------------------
+%% Temas con una tabla de contenido en la parte superior.
+%% Incluye secciones y subsecciones.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usetheme{Copenhagen}
+%\usetheme{Luebeck}
+%\usetheme{Malmoe}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------
+%% Puedes cambiar el aspecto interior de un tema, el contenido de cada diapositiva.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\useinnertheme{default}
+%\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme[shadow=false]{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------
+%% Puedes cambiar el aspecto exterior de un tema, los marcos exteriores.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme[]{split}
+%\useoutertheme[]{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%----------------------------------------------------------------------------
+%% Puedes cambiar todos los colores utilizados en un tema.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usecolortheme[]{structure}
+%\usecolortheme{sidebartab}
+%\usecolortheme[overlystylish]{albatross}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{seagull}
+%\usecolortheme{wolverine}
+%\usecolortheme{beaver}
+%----------------------------------------------------------------------------
+%% Puedes cambiar sólo los colores interiores
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usecolortheme{lily}
+%\usecolortheme{orchid} 
+%\usecolortheme{rose} 
+
+%----------------------------------------------------------------------------
+%% Puedes cambiar sólo los colores exteriores.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+%\usecolortheme{whale} 
+%\usecolortheme{seahorse} 
+%\usecolortheme{dolphin} 
+
+%----------------------------------------------------------------------------
+%% Puedes cambiar los tipos de letra utilizados en un tema.
+%% Por favor, revisa el manual de usuario de BEAMER.
+
+\usefonttheme{professionalfonts} % Para que las ecuaciones tengan mejor aspecto
+%\usefonttheme[]{serif}
+%\usefonttheme[]{structurebold}
+
+%% Y también puedes elegir un tipo de letra cargando culquiera de los siguientes paquetes:
+%% avant, bookman, chancery, charter, euler, helvet, mathtime, 
+%% mathptm, mathptmx, newcent, palatino, pifont, utopia.
+
+%\usepackage{avant}
+
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+%----------------------------------------------------------------------------
+
+
+%Antes de cada sección incluye la tabla de contenidos destacando la actual
+
+\AtBeginSection[]
+	{
+   \begin{frame}
+       \frametitle{Resumen}
+       \tableofcontents[currentsection]
+   \end{frame}
+	}
+
+
+\begin{document}
+
+% Citas bibliográficas
+
+\nocite{moreno1999automatizacion}
+\nocite{moreno1999grafcet}
+\nocite{piedrafita2004ingenieria}
+\nocite{ramirez1994automatizacion}
+
+%--------------------------------------
+
+%\input{portada}
+
+% Tabla de contenidos
+
+\begin{frame}[fragile, label = indice]
+\frametitle{Resumen}
+\tableofcontents[pausesections]
+\end{frame}
+
+% Contenidos
+
+\input{profesor}
+
+\input{que_estudia}
+
+\input{objetivos}
+
+\input{temario}
+
+\input{bibliografia}
+
+\input{evaluacion}
+%Aqui agregar el nombre del archivo.tex creado para poder agregar en el input
+\input{estudiante}
+
+
+\end{document}

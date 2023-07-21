@@ -1,0 +1,12 @@
+\frametitle{Automatización}
+
+\begin{itemize}
+\item La automatización es la ciencia que se encarga de diseñar aquellos dispositivos que permiten hacer funcionar de manera autónoma máquinas y procesos
+
+\item En la asignatura \textbf{Electrónica y automática} se han diseñado dispositivos de control para procesos continuos
+
+\item En concreto se han diseñado reguladores o controladores de tipo PID
+
+\item En esta asignatura se van a diseñar dispositivos de control para procesos de eventos discretos
+\end{itemize}
+

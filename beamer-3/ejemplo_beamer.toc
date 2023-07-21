@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {1}{Profesor}{8}{0}{1}
+\beamer@sectionintoc {2}{¿Qué estudia la asignatura?}{10}{0}{2}
+\beamer@sectionintoc {3}{Objetivos básicos}{12}{0}{3}
+\beamer@sectionintoc {4}{Temario}{14}{0}{4}
+\beamer@sectionintoc {5}{Bibliografía}{21}{0}{5}
+\beamer@sectionintoc {7}{Evaluación de la asignatura}{23}{0}{6}
+\beamer@sectionintoc {8}{Estudiante}{25}{0}{7}
